@@ -706,6 +706,9 @@ h3.my-profession {
 }
 
 @media (max-width: 1199px) {
+  .section-home .container {
+    padding-top: 70px;
+  }
   .section-aside {
     left: -270px;
   }
