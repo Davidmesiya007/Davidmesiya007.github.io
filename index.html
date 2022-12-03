@@ -577,11 +577,15 @@
             </h4>
             <!-- ====== contact form ====== -->
             <div class="row">
-              <div class="contact-form padd-15">
+              <form
+                class="contact-form padd-15"
+                onsubmit="sendMail(); reset(); return false;"
+              >
                 <div class="row">
                   <div class="form-item col-6 padd-15">
                     <div class="form-group">
                       <input
+                        id="name"
                         type="text"
                         class="form-control"
                         placeholder="Name"
@@ -591,6 +595,7 @@
                   <div class="form-item col-6 padd-15">
                     <div class="form-group">
                       <input
+                        id="email"
                         type="email"
                         class="form-control"
                         placeholder="Email"
@@ -602,6 +607,7 @@
                   <div class="form-item col-12 padd-15">
                     <div class="form-group">
                       <input
+                        id="subject"
                         type="text"
                         class="form-control"
                         placeholder="Subject"
@@ -614,6 +620,7 @@
                     <div class="form-group">
                       <textarea
                         type="text"
+                        id="message"
                         class="form-control"
                         placeholder="Message"
                       ></textarea>
@@ -625,7 +632,7 @@
                     <button type="submit" class="btn">Send Message</button>
                   </div>
                 </div>
-              </div>
+              </form>
             </div>
           </div>
         </section>
@@ -661,6 +668,17 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("7lqunHRmuEkVS0d63");
+      })();
+    </script>
+    <script src="js/email.js"></script>
     <script src="js/script.js"></script>
     <script src="js/style-switcher.js"></script>
   </body>
